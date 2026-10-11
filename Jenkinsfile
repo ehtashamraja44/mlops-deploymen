@@ -23,14 +23,14 @@ pipeline {
     }
     post {
         success {
-            emailext subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "Pipeline passed: ${env.BUILD_URL}",
-                     to: "ehtashamraja60@gmail.com"
+            mail to: 'ehtashamraja60@gmail.com',
+                 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Pipeline passed: ${env.BUILD_URL}"
         }
         failure {
-            emailext subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "Pipeline failed: ${env.BUILD_URL}",
-                     to: "ehtashamraja60@gmail.com"
+            mail to: 'ehtashamraja60@gmail.com',
+                 subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Pipeline failed: ${env.BUILD_URL}"
         }
     }
 }
