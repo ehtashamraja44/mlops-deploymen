@@ -4,6 +4,8 @@ pipeline {
     agent any
     environment {
         PATH = "C:\\Users\\Raja Ehtasham\\mlops-deployment\\venv\\Scripts;${env.PATH}"
+        PYTHONUTF8 = "1"
+        PYTHONIOENCODING = "utf-8"
     }
     stages {
         stage('Dev Pipeline') {
