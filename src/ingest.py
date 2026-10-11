@@ -1,12 +1,12 @@
-from sklearn.datasets import load_breast_cancer, fetch_california_housing
+import pandas as pd
+from sklearn.datasets import load_breast_cancer
 
 def ingest():
     disease = load_breast_cancer(as_frame=True).frame
     disease.to_csv("disease.csv", index=False)
-    house = fetch_california_housing(as_frame=True).frame
-    house = house.sample(5000, random_state=42)
+    house = pd.read_csv("boston_raw.csv")
     house.to_csv("house.csv", index=False)
-    print("Disease:", disease.shape, "| House:", house.shape)
+    print("Disease:", disease.shape, "| Boston house:", house.shape)
 
 if __name__ == "__main__":
     ingest()

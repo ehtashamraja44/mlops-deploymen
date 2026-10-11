@@ -37,5 +37,5 @@ def run_experiment(exp_name, model_name, csv, target, models, task):
 run_experiment("disease-classification", "DiseaseClassifier", "disease.csv", "target",
     {"RandomForest": RandomForestClassifier(n_estimators=100),
      "LogisticRegression": LogisticRegression(max_iter=5000)}, "classification")
-run_experiment("house-price-regression", "HousePriceRegressor", "house.csv", "MedHouseVal",
+run_experiment("house-price-regression", "HousePriceRegressor", "house.csv", "MEDV",
     {"RandomForestRegressor": RandomForestRegressor(n_estimators=100)}, "regression")
